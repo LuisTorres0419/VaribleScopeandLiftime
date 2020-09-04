@@ -9,14 +9,33 @@ Module VaribleScopeandLiftime
     Sub Main()
         'TestTwo()
         Dim z As String = "z in main"
-
+        Dim newNumber As Integer
         'TestThree(z)
-        TestFour(z)
+        'TestFour(z)
+        newNumber = 10
+        For i = 1 To 2 Step 1
 
-        Console.WriteLine(z)
+            TestFive(newNumber)
+
+        Next
+
+        'TestFive(newNumber)
+        Console.WriteLine(newNumber)
 
         Console.ReadLine()
     End Sub
+
+    Sub TestFive(ByVal aNumber As Integer)
+        Static result As Integer
+
+        result += aNumber
+        aNumber = result
+        Console.WriteLine(result)
+
+
+
+    End Sub
+
 
     Sub TestThree(ByVal anystring As String)
 
